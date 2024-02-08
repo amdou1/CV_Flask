@@ -26,10 +26,10 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd $HOME/www/
-            git clone https://github.com/OpenRSI/CV_Flask.git
+            git clone https://github.com/darling/CV_Flask
             # Vérifier si le répertoire de destination existe
             if [ "$(ls -A ./flask)" ]; then
-              rsync -r ./CV_Flask/ ./flask
+              rsync -r ./CV_Flask/ ./cv
               rm -rf ./CV_Flask
             else
               echo "Le répertoire flask de destination sur votre serveur n'existe pas"
